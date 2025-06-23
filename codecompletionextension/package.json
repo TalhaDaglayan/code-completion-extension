@@ -1,0 +1,51 @@
+{
+  "name": "codecompletionextension",
+  "displayName": "Code Completion Extension",
+  "description": "Kod tamamlama uzantısı",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": ["Other"],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:python",
+    "onCommand:codecompletionextension.helloWorld",
+    "onStartupFinished"
+  ],
+
+  "contributes": {
+    "languages": [
+        {
+            "id": "python",
+            "extensions": [".py"],
+            "aliases": ["Python"]
+        }
+    ],
+    "configuration": {
+        "type": "object",
+        "title": "Code Completion Extension",
+        "properties": {}
+    },
+    "commands": [
+      {
+        "command": "codecompletionextension.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.98.0",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "axios": "^1.8.3"
+  }
+}
